@@ -8,7 +8,7 @@ const ctx = myCanvas.getContext('2d');
 
 
 //will set width to half canvas to avoid stress moving the bar
-const width = myCanvas.width = window.innerWidth/2;
+const width = myCanvas.width = (window.innerWidth/2);
 const height = myCanvas.height = window.innerHeight;
 
 
@@ -55,7 +55,7 @@ const myBar=new Bar(25,25,25,175);
 myBar.draw();
 
 
-document.addEventListener("mousemove",(event)=>{
+myCanvas.addEventListener("mousemove",(event)=>{
    
 
     myBar.deleteOldRectangle();
@@ -63,6 +63,6 @@ document.addEventListener("mousemove",(event)=>{
     myBar.draw();
 
     //TODO when bar reaches bottom, should not go further, maybe that will be controlled inside draw
-    
+
   
 });

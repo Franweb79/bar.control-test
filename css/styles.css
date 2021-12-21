@@ -36,5 +36,8 @@ html, body {
     text-shadow: 0 0 4px white;
   }
  
+  #myCanvas{
+    background-color: violet;
+  }
 
   
