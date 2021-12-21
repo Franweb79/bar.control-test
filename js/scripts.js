@@ -7,14 +7,14 @@ const myCanvas = document.getElementById('myCanvas');
 const ctx = myCanvas.getContext('2d');
 
 
-
-const width = myCanvas.width = window.innerWidth;
+//will set width to half canvas to avoid stress moving the bar
+const width = myCanvas.width = window.innerWidth/2;
 const height = myCanvas.height = window.innerHeight;
 
 
 
 
-class Palo{
+class Bar{
 
     
     constructor(x,y,width, height){
@@ -29,16 +29,10 @@ class Palo{
     draw(){
 
         //First, we use beginPath() to state that we want to draw a shape on the paper.
-        //https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/beginPath
-
-        //https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/clearRect
-
-        //https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fillRect
+       
         ctx.beginPath();
 
-       //https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fillStyle
-
-       https://lavrton.com/hit-region-detection-for-html5-canvas-and-how-to-listen-to-click-events-on-canvas-shapes-815034d7e9f8/
+       
 
         ctx.fillStyle = "red";
 
@@ -48,10 +42,8 @@ class Palo{
         
     }
 
-    //we paint as background the old Y position when mousemove is triggered
-    deleteOldPositionY(){
-        let oldY=this.y; // we store old this.y because we will draw first
-        //before deleting, so we need to store it on a local variable
+    deleteOldRectangle(){
+        
         ctx.clearRect(this.x, this.y, this.width, this.height);
       
     }
@@ -59,41 +51,18 @@ class Palo{
 
 
 
-const myPalo=new Palo(25,25,25,175);
-myPalo.draw();
+const myBar=new Bar(25,25,25,175); 
+myBar.draw();
 
 
 document.addEventListener("mousemove",(event)=>{
-   // myPalo.y+=myPalo.y++;
-   // myPalo.draw();
+   
 
-  /* console.log("event page",event.pageX, event.pageY);
-   console.log ("mypalo x e y",myPalo.x, myPalo.y );
-   console.log ("mypalo width y height",myPalo.width, myPalo.height );*/
+    myBar.deleteOldRectangle();
+    myBar.y=event.pageY;//new rectangle will start where pageY
+    myBar.draw();
 
-
-
-   if(   ( (event.pageX>=myPalo.x) && ( event.pageX <= (myPalo.x + myPalo.width) ) ) && ( (event.pageY>=myPalo.y) && (event.pageY<= (myPalo.y + myPalo.height) ) )   ){
-        
+    //TODO when bar reaches bottom, should not go further, maybe that will be controlled inside draw
     
-        myPalo.deleteOldPositionY();
-        console.log(event.pageX, event.pageY);
-        myPalo.y=event.pageY;//new rectangle will start where pageY
-        myPalo.draw();
-   }
-
-   //up
-   if(   ( (event.pageX>=myPalo.x) && ( event.pageX <= (myPalo.x + myPalo.width) ) ) && ( (event.pageY>=myPalo.y-100) && (event.pageY<=(myPalo.y)) ) ){
-        
-    
-    myPalo.deleteOldPositionY();
-    console.log(event.pageX, event.pageY);
-    myPalo.y=event.pageY;//new rectangle will start where pageY
-    myPalo.draw();
-    }
-
-
-
-
   
 });
