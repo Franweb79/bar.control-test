@@ -15,3 +15,8 @@
 - https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fillStyle
 
 - https://lavrton.com/hit-region-detection-for-html5-canvas-and-how-to-listen-to-click-events-on-canvas-shapes-815034d7e9f8/
+
+## other things
+- canvas width set to half size of window
+
+- Disabled mouse arrow when using canvas, with 'cursor:none' css
