@@ -21,7 +21,7 @@ html, body {
     top: -4px;
     right: 5px;
   
-    color: wheat;
+    color: #000;
     text-shadow: 0 0 4px white;
   }
 
@@ -32,7 +32,7 @@ html, body {
     top: -4px;
     right: 5px;
     /*position absolute deleted for links, otherwise collpases*/
-    color: wheat;
+    color: #000;
     text-shadow: 0 0 4px white;
   }
  
