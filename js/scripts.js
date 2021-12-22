@@ -36,6 +36,11 @@ class Bar{
 
         ctx.fillStyle = "red";
 
+        //this will prevent bar from trespassing bottom of the canvas
+        if(this.y > (myCanvas.height - this.height)){
+            this.y = myCanvas.height - this.height;
+        }
+
         ctx.fillRect(this.x, this.y, this.width, this.height);
         
 
@@ -62,7 +67,6 @@ myCanvas.addEventListener("mousemove",(event)=>{
     myBar.y=event.pageY;//new rectangle will start where pageY
     myBar.draw();
 
-    //TODO when bar reaches bottom, should not go further, maybe that will be controlled inside draw
 
   
 });
