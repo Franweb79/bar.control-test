@@ -1,4 +1,9 @@
-## This test will habe 2 branches:
+# JAVASCRIPT-CANVAS-BAR-CONTROL-TESTING
+
+- https://www.linkedin.com/in/francisco-javier-prieto-gut/
+- https://twitter.com/@FranDeveloper79
+
+## This test will have 2 branches:
 
 - master: you control the bar moving mouse over the whole canvas
 - control-bar-inside: you control the bar only if you move mouse over
@@ -16,7 +21,7 @@
 
 - https://lavrton.com/hit-region-detection-for-html5-canvas-and-how-to-listen-to-click-events-on-canvas-shapes-815034d7e9f8/
 
-## other things
+## Other things to note
 - canvas width set to half size of window
 
 - Disabled mouse arrow when using canvas, with 'cursor:none' css
